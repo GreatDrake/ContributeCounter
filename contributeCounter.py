@@ -30,6 +30,7 @@ class Crawler:
             print(err)
             print(page, historyGET)
             print(self.getStats())
+            self.getResult()
             sys.exit(0)
             
         soup = BeautifulSoup(html, 'html.parser')
@@ -51,6 +52,7 @@ class Crawler:
             print(err)
             print(page)
             print(self.getStats())
+            self.getResult()
             sys.exit(0)
             
         soup = BeautifulSoup(html, 'html.parser')
@@ -73,6 +75,7 @@ class Crawler:
             print(err)
             print(GET)
             print(self.getStats())
+            self.getResult()
             sys.exit(0)
             
         jsonResponse = json.loads(response) 
@@ -126,7 +129,7 @@ class Crawler:
         
   
 if __name__ == '__main__':
-    page = 'https://en.wikipedia.org/wiki/Wikipedia' #Specify starting article
+    page = 'https://en.wikipedia.org/wiki/Wikipedia' #Specify starting !!!article!!!
     crawler = Crawler(page, 100) #Specify time to crawl
     crawler.crawl(page)
     
