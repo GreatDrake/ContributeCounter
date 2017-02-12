@@ -6,6 +6,7 @@ import re
 import time 
 import random
 import sys
+import manageDB
 
 sys.setrecursionlimit(100000) #else we get exception after crawling for too much time
 
@@ -29,7 +30,6 @@ class Crawler:
         except Exception as err:
             print(err)
             print(page, historyGET)
-            print(self.getStats())
             self.getResult()
             sys.exit(0)
             
@@ -51,7 +51,6 @@ class Crawler:
         except Exception as err:
             print(err)
             print(page)
-            print(self.getStats())
             self.getResult()
             sys.exit(0)
             
@@ -74,7 +73,6 @@ class Crawler:
         except Exception as err:
             print(err)
             print(GET)
-            print(self.getStats())
             self.getResult()
             sys.exit(0)
             
@@ -130,7 +128,7 @@ class Crawler:
   
 if __name__ == '__main__':
     page = 'https://en.wikipedia.org/wiki/Wikipedia' #Specify starting !!!article!!!
-    crawler = Crawler(page, 100) #Specify time to crawl
+    crawler = Crawler(page, 50) #Specify time to crawl
     crawler.crawl(page)
     
     for pair in crawler.getResult():

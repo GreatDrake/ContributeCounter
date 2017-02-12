@@ -12,8 +12,6 @@ def clear_table():
     conn.commit()
     
 
-
-if __name__ == '__main__':
-    create_table()
-    cur.close()
-    conn.close()
+create_table()
+cur.close()
+conn.close()
